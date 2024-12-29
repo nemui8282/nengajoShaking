@@ -1,0 +1,17 @@
+.relative{
+    position:relative;
+    width: 300px;
+    height: 202.96px;
+}
+
+.back{
+    position: absolute;
+    top: 0;
+    left:0;
+}
+
+.kage{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
