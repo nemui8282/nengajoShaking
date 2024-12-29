@@ -93,20 +93,21 @@
     function increaseImagekageOpcity() {
 
       if(alphakage < 0.7){//透明度MAX=1
-        alpha += 0.01;
-        if(alpha > 0.7){
-          alpha = 0.7;
+        alphakage += 0.01;
+        if(alphakage > 0.7){
+          alphakage = 0.7;
         }
         imagekage.style.opacity = alphakage;
       }
 
       if(alphahuti < 1){//透明度MAX=1
-        alpha += 0.01;
-        if(alpha > 1){
-          alpha = 1;
+        alphahuti += 0.01;
+        if(alphahuti > 1){
+          alphahuti = 1;
         }
         imagehuti.style.opacity = alphahuti;
       }
+      
     }
   </script>
 
