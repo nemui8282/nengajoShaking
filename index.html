@@ -92,16 +92,16 @@
     // 透明度を上げる関数
     function increaseImagekageOpcity() {
 
-      if(alpha < 1){//透明度MAX=1
-        alpha += 0.01;
-        if(alpha > 1){
-          alpha = 1;
+      if(alpha < 0.7){//透明度MAX=1
+        alpha += 0.05;
+        if(alpha > 0.7){
+          alpha = 0.7;
         }
         imagekage.style.opacity = alpha;
       }
 
       if(alphahuti < 1){//透明度MAX=1
-        alphahuti += 0.01;
+        alphahuti += 0.05;
         if(alphahuti > 1){
           alphahuti = 1;
         }
