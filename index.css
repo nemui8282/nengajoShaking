@@ -3,6 +3,12 @@
     text-align: center;
 }
 
+.waku{
+    width: 350px;
+    height: 245px;
+    background-color: yellow;
+}
+
 .relative{
     position:relative;
     width: 300px;
