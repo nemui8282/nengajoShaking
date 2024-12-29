@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ぱずが課題に全く手をつけず作ったページ</title>
   <link rel="stylesheet" type="text/css" href="index.css">
-  
   <style>
     body {
       display: flex;
@@ -13,20 +12,22 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: black;
+      background-color: white;
     }
+
     img {
       width: 300px;
       height: auto;
       transition: filter 0.5s ease;
     }
 
+
     #imageback{
       opacity: 1;
     }
 
     #imagekage{
-      opacity:1;
+      opacity:0;
     }
 
     #imagehuti{
@@ -42,10 +43,10 @@
 
 <body>
   <div class = "relative">
-  
-  <img id="imageback" src="back.png">
-  <img id="imagekage" src="kage.png">
 
+    <img id="imageback" src="back.png" class="back">
+    <img id="imagekage" src="kage.png" class="kage">
+    
   </div>
   
   <script>
