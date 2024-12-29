@@ -46,6 +46,7 @@
 
     <img id="imageback" src="back.png" class="back">
     <img id="imagekage" src="kage.png" class="kage" style="opacity:0;">
+    <img id="imagehuti" src="huti.png" class="huti" style="opacity:0;">
     
   </div>
   
@@ -60,6 +61,7 @@
 
     const imageback = document.getElementById('imageback');
     const imagekage = document.getElementById('imagekage');
+    const imagekage = document.getElementById('imagehuti');
 
     // 加速度センサーのデータを取得
     window.addEventListener('devicemotion', (event) => {
@@ -93,6 +95,7 @@
           alpha = 1;
         }
         imagekage.style.opacity = alpha;
+        imagehuti.style.opacity = alpha;
       }
     }
   </script>
