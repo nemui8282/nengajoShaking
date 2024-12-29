@@ -46,6 +46,7 @@
 
     <img id="imageback" src="back.png" class="back">
     <img id="imagekage" src="kage.png" class="kage" style="opacity:0;">
+    <img id="imagehuti" src="huti.png" class="huti" style="opacity:0;">
     
   </div>
   
@@ -56,10 +57,12 @@
     let lastUpdate = 0;
 
     //現在の透明度
-    let alpha = 0;
+    let alphakage = 0;
+    let alphahuti = 0;
 
     const imageback = document.getElementById('imageback');
     const imagekage = document.getElementById('imagekage');
+    const imagekage = document.getElementById('imagehuti');
 
     // 加速度センサーのデータを取得
     window.addEventListener('devicemotion', (event) => {
@@ -87,12 +90,20 @@
     // 透明度を上げる関数
     function increaseImagekageOpcity() {
 
-      if(alpha < 1){//透明度MAX=1
+      if(alphakage < 1){//透明度MAX=1
+        alpha += 0.01;
+        if(alpha > 0.8){
+          alpha = 0.8;
+        }
+        imagekage.style.opacity = alphakage;
+      }
+
+      if(alphahuti < 1){//透明度MAX=1
         alpha += 0.01;
         if(alpha > 1){
           alpha = 1;
         }
-        imagekage.style.opacity = alpha;
+        imagehuti.style.opacity = alphahuti;
       }
     }
   </script>
