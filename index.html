@@ -27,11 +27,11 @@
     }
 
     #imagekage{
-      opacity:0;
+      opacity:1;
     }
 
     #imagehuti{
-      opacity: 0;
+      opacity: 1;
     }
 
     #imagemoji{
@@ -45,8 +45,9 @@
   <div class = "relative">
 
     <img id="imageback" src="back.png" class="back">
-    <img id="imagekage" src="kage.png" class="kage" style="opacity:0;">
-    <img id="imagehuti" src="huti.png" class="huti" style="opacity:0;">
+    <img id="imagekage" src="kage.png" class="kage" style="opacity: 0;">
+    <img id="imagehuti" src="huti.png" class="huti" style="opacity: 0;">
+    <img id="imagemoji" src="moji.png" class="moji" style="opacity: 1;">
     
   </div>
   
@@ -63,6 +64,7 @@
     const imageback = document.getElementById('imageback');
     const imagekage = document.getElementById('imagekage');
     const imagehuti = document.getElementById('imagehuti');
+    const imagemoji = document.getElementById('imagemoji');
 
     // 加速度センサーのデータを取得
     window.addEventListener('devicemotion', (event) => {
@@ -90,10 +92,10 @@
     // 透明度を上げる関数
     function increaseImagekageOpcity() {
 
-      if(alphakage < 1){//透明度MAX=1
+      if(alphakage < 0.7){//透明度MAX=1
         alpha += 0.01;
-        if(alpha > 0.8){
-          alpha = 0.8;
+        if(alpha > 0.7){
+          alpha = 0.7;
         }
         imagekage.style.opacity = alphakage;
       }
