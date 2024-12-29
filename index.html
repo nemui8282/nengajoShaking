@@ -46,7 +46,7 @@
 
     <img id="imageback" src="back.png" class="back">
     <img id="imagekage" src="kage.png" class="kage" style="opacity: 0;">
-    <img id="imagehuti" src="huti.png" class="huti">
+    <img id="imagehuti" src="huti.png" class="huti" style="opacity: 0;">
     <img id="imagemoji" src="moji.png" class="moji">
     
   </div>
@@ -100,13 +100,13 @@
         imagekage.style.opacity = alpha;
       }
 
-      // if(alphahuti < 1){//透明度MAX=1
-      //   alphahuti += 0.01;
-      //   if(alphahuti > 1){
-      //     alphahuti = 1;
-      //   }
-      //   imagehuti.style.opacity = alphahuti;
-      // }
+      if(alphahuti < 1){//透明度MAX=1
+        alphahuti += 0.01;
+        if(alphahuti > 1){
+          alphahuti = 1;
+        }
+        imagehuti.style.opacity = alphahuti;
+      }
       
     }
   </script>
