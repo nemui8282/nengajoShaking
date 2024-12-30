@@ -42,7 +42,6 @@
 </head>
 
 <body>
-   <button id="permissionButton">加速度センサーを許可</button>
    <dev class = "text">
     <h1 class="red">Shake your phone!!!!</h1>
      
@@ -72,32 +71,7 @@
     const imagehuti = document.getElementById('imagehuti');
     const imagemoji = document.getElementById('imagemoji');
 
-    const permissionButton = document.getElementById('permissionButton');
-
-    //センサー許可リクエスト
-   permissionButton.addEventListener('click', async () => {
-      if(typeof DeviceMotionEvent.requestPermission === 'function'){
-        try{
-          const permission = await DeviceMotionEvent.requestPermission();
-          if(permission === 'granted'{
-            permissionButton.style.display = 'none';
-            startDeviceMotionListener();//センサーを開始
-          }else{
-            alert('加速度センサーの使用が許可されませんでした。');
-          }
-        }catch(error){
-          console.error('センサー許可リクエスト中にエラーが発生しました。',error);
-        }
-      }else{//iPhone以外
-        alert('このデバイスではセンサー許可が不要です');
-        permissionButton.style.display='none';
-        startDeviceMotionListener();
-      }
-    });
-    
-
     // 加速度センサーのデータを取得
-    function startDeviceMotionListener(){
     window.addEventListener('devicemotion', (event) => {
       const currentTime = Date.now();
       if ((currentTime - lastUpdate) > 100) {// データ取得間隔を100msに制限
@@ -119,7 +93,6 @@
         lastUpdate = currentTime;
       }
     });
-    }
 
 
     // 透明度を上げる関数
