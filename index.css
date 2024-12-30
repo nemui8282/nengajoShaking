@@ -4,9 +4,10 @@
 }
 
 .waku{
-    width: 350px;
-    height: 245px;
+    width: 300px;
+    height: 202.96px;
     background-color: yellow;
+    padding-left: 5px;
 }
 
 .relative{
