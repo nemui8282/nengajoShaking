@@ -54,6 +54,8 @@
     <img id="imagemoji" src="moji.png" class="moji">
     
   </div>
+
+  <button id="permissionButton"></button>
   
   <script>
     // 振動を検知するための閾値
@@ -70,7 +72,30 @@
     const imagehuti = document.getElementById('imagehuti');
     const imagemoji = document.getElementById('imagemoji');
 
+    //センサー許可リクエスト
+    permissionButton.addEventListener('click',async() => {
+      if(typeof DeviceMotionEvent.requestPermission === 'function'){
+        try{
+          const permission = await DeviceMotionEvent.requestPermission();
+          if(permission === 'granted'{
+            permissionButton.style.display = 'none';
+            startDeviceMotionListener();
+          }else{
+            alert('加速度センサーの使用が許可されませんでした。');
+          }
+        }catch(error){
+          console.error('センサー許可リクエスト中にエラーが発生しました。',error);
+        }
+      }else{//iPhone以外
+        alert('このデバイスではセンサー許可が不要です');
+        permissionButton.style.style.display='none';
+        startDeviceMotionListener();
+      }
+    });
+    
+
     // 加速度センサーのデータを取得
+    function startDeviceMotionListener(){
     window.addEventListener('devicemotion', (event) => {
       const currentTime = Date.now();
       if ((currentTime - lastUpdate) > 100) { // データ取得間隔を100msに制限
@@ -91,6 +116,7 @@
         lastUpdate = currentTime;
       }
     });
+    }
 
 
     // 透明度を上げる関数
