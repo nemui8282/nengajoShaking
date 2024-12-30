@@ -57,9 +57,6 @@
   </div>
   
   <script>
-    // 状態を表示するためのDOM要素を取得
-    const statusDiv = document.getElementById('status');
-    const permissionButton = document.getElementById('permissionButton');
     
     // 振動を検知するための閾値
     const SHAKE_THRESHOLD = 15;
@@ -74,6 +71,8 @@
     const imagekage = document.getElementById('imagekage');
     const imagehuti = document.getElementById('imagehuti');
     const imagemoji = document.getElementById('imagemoji');
+
+    const permissionButton = document.getElementById('permissionButton');
 
     //センサー許可リクエスト
     permissionButton.addEventListener('click',async() => {
@@ -91,7 +90,7 @@
         }
       }else{//iPhone以外
         alert('このデバイスではセンサー許可が不要です');
-        permissionButton.style.style.display='none';
+        permissionButton.style.display='none';
         startDeviceMotionListener();
       }
     });
