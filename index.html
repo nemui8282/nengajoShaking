@@ -75,7 +75,7 @@
     const permissionButton = document.getElementById('permissionButton');
 
     //センサー許可リクエスト
-    permissionButton.addEventListener('click',async() => {
+   permissionButton.addEventListener('click', async () => {
       if(typeof DeviceMotionEvent.requestPermission === 'function'){
         try{
           const permission = await DeviceMotionEvent.requestPermission();
