@@ -1,8 +1,5 @@
 .message {
   color: #ffffff; /* 文字色を白に設定 */
-  font-size: 15px; /* 文字サイズを設定 */
-  padding: 10px; /* テキスト周りに余白を追加 */
-  border-radius: 5px; /* 角を丸める */
   text-align: center; /* テキストを中央揃え */
 }
 
