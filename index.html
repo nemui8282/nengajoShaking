@@ -46,11 +46,8 @@
     </div>
 
   <div class="message">
-    <p>みんなのおかげで楽しくここまで来られました。
-      <br>これからもたくさんお世話になります。
-      <br>いつもありがとな！今年もよろしく！！！
-    </p>
-  </div> <!-- 完全に透明になったときに表示するテキスト -->
+     <img id="sen" src="sen.png" class="sen" style="opacity: 0;">
+  </div> 
 
 </div>
     
@@ -71,6 +68,7 @@
     const imagehuti = document.getElementById('imagehuti');
     const imagemoji = document.getElementById('imagemoji');
     const imageqr = document.getElementById('imageqr');
+    const imagesen = document.getElementById('imagesen');
 
            // 【1】センサー許可リクエストをボタンに紐付け
     permissionButton.addEventListener('click', async () => {
@@ -148,6 +146,7 @@
         }
         
         imagehuti.style.opacity = alphahuti;
+        imagesen.style.opacity = alphahuti;
       　imageqr.style.opacity = alphaqr;
       }
       
