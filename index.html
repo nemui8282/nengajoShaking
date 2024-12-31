@@ -21,6 +21,13 @@
       height: auto;
       transition: filter 0.5s ease;
     }
+
+    #message {
+      display: none; /* 初期状態では非表示 */
+      font-size: 20px;
+      color: red;
+      margin-top: 20px;
+    }
   </style>
 </head>
 
@@ -44,6 +51,8 @@
       <button id="permissionButton">加速度センサーを許可</button>
     </div>
   </dev>
+
+  <div id="message">みんなのおかげで楽しくここまで来られました。これからもたくさんお世話になります。いつもありがとな！今年もよろしく！！！</div> <!-- 完全に透明になったときに表示するテキスト -->
   
   <script>
     
@@ -136,9 +145,7 @@
 
         if(alphaqr < 0){
           alpha = 0;
-        <div class = "sentence">
-          <p>みんなのおかげでここまで楽しく過ごせて来れました。これからもたくさんお世話になります。今年もよろしくな！！</p>
-        </div>
+          messageDiv.style.display = 'block'; // メッセージを表示
         }
         
         imagehuti.style.opacity = alphahuti;
