@@ -27,9 +27,11 @@
 }
 
 .message{
+    width:300px;
+    height: auto;
+    margin: auto;
     margin-top: 10px;
-    color: white;
-    text-align: center;
+    padding: 5px;
 }
 
 .back{
