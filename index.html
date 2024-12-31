@@ -72,6 +72,34 @@
     const imagehuti = document.getElementById('imagehuti');
     const imagemoji = document.getElementById('imagemoji');
 
+           // 【1】センサー許可リクエストをボタンに紐付け
+    permissionButton.addEventListener('click', async () => {
+      // iPhoneではセンサー使用の許可が必要な場合がある
+      if (typeof DeviceMotionEvent.requestPermission === 'function') {
+        try {
+          // 許可をリクエスト
+          const permission = await DeviceMotionEvent.requestPermission();
+          if (permission === 'granted') {
+            // 許可された場合
+            statusDiv.textContent = 'センサーが許可されました！動作を確認してください。';
+            permissionButton.style.display = 'none'; // 許可後、ボタンを非表示にする
+            startDeviceMotionListener(); // センサーを開始
+          } else {
+            // 許可が拒否された場合
+            statusDiv.textContent = 'センサーの使用が許可されませんでした。';
+          }
+        } catch (error) {
+          // 許可リクエスト中にエラーが発生した場合
+          statusDiv.textContent = `センサー許可中にエラーが発生しました: ${error.message}`;
+        }
+      } else {
+        // iPhone以外（または許可リクエストが不要な環境）の場合
+        statusDiv.textContent = 'このデバイスではセンサー許可が不要です。センサーを開始します。';
+        permissionButton.style.display = 'none'; // ボタンを非表示
+        startDeviceMotionListener(); // センサーを開始
+      }
+    });
+
     // 加速度センサーのデータを取得
     window.addEventListener('devicemotion', (event) => {
       const currentTime = Date.now();
