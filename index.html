@@ -129,10 +129,16 @@
       if(alphahuti < 1){//透明度MAX=1
         alphahuti += 0.05;
         alphaqr += -0.05
+        
         if(alphahuti > 1){
           alphahuti = 1;
         }
+
+        if(alphaqr < 0){
+          alpha = 0;
+        }
         imagehuti.style.opacity = alphahuti;
+      　imageqr.style.opacity = alphaqr;
       }
       
     }
