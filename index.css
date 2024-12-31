@@ -1,8 +1,3 @@
-.message {
-  color: #ffffff; /* 文字色を白に設定 */
-  text-align: center; /* テキストを中央揃え */
-}
-
 .text{
     justify-content: center;
 }
@@ -29,6 +24,13 @@
 .kyoka{
     text-align: center;
     margin-top: 10px;
+}
+
+.message{
+    margin-top: 10px;
+    color: black;
+    text-align: center;
+    background-color: yellow;
 }
 
 .back{
