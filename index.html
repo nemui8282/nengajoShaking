@@ -21,24 +21,6 @@
       height: auto;
       transition: filter 0.5s ease;
     }
-
-
-/*     #imageback{
-      opacity: 1;
-    }
-
-    #imagekage{
-      opacity:1;
-    }
-
-    #imagehuti{
-      opacity: 1;
-    }
-
-    #imagemoji{
-      opacity: 1;
-    }
- */
   </style>
 </head>
 
@@ -54,6 +36,7 @@
         <img id="imagekage" src="kage.png" class="kage" style="opacity: 0;">
         <img id="imagehuti" src="huti.png" class="huti" style="opacity: 0;">
         <img id="imagemoji" src="moji.png" class="moji">
+        <img id="imageqr" src="qr.png" class="qr" style="opacity: 1;">
       </div>
     </div>
 
@@ -72,11 +55,13 @@
     //現在の透明度
     let alpha = 0;
     let alphahuti = 0;
+    let alphaqr = 1;
 
     const imageback = document.getElementById('imageback');
     const imagekage = document.getElementById('imagekage');
     const imagehuti = document.getElementById('imagehuti');
     const imagemoji = document.getElementById('imagemoji');
+    const imageqr = document.getElementById('imageqr');
 
            // 【1】センサー許可リクエストをボタンに紐付け
     permissionButton.addEventListener('click', async () => {
@@ -147,6 +132,14 @@
           alphahuti = 1;
         }
         imagehuti.style.opacity = alphahuti;
+      }
+
+      if(alphaqr == 1){//透明度MAX=1
+        alphaqr -= 0.05;
+        if(alphaqr  == 0){
+          alphaqr = 0;
+        }
+        imageqr.style.opacity = alphaqr;
       }
       
     }
